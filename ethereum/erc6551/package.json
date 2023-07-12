@@ -1,0 +1,16 @@
+{
+  "name": "erc6551",
+  "version": "1.0.0",
+  "description": "",
+  "private": true,
+  "scripts": {
+    "script": "yarn workspace scripts run"
+  },
+  "author": "",
+  "license": "ISC",
+  "workspaces": {
+    "packages": [
+      "packages/*"
+    ]
+  }
+}

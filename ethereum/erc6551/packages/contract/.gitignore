@@ -1,0 +1,9 @@
+.env
+artifacts/
+cache/
+node_modules/
+deployments/dev
+deployments/hardhat
+
+coverage
+coverage.json
