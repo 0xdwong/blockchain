@@ -3,7 +3,7 @@ const { writeAddr } = require('./recoder.js');
 
 async function main() {
     let [owner] = await ethers.getSigners();
-    let contractName = 'CloneFactory';
+    let contractName = 'Factory';
     const contractFactory = await ethers.getContractFactory(contractName);
 
     // 部署合约
