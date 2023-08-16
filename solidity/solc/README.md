@@ -23,4 +23,6 @@ brew unlink solidity
 brew install solidity.rb
 
 ## 编译合约
-solc -o. --bin --ast-compact-json --asm Test.sol
+solc -o. --bin --ast-compact-json --asm Simple.sol
+
+solc --pretty-json  -o. --bin --ast-compact-json --asm Simple.sol
