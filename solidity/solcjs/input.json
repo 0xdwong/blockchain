@@ -1,0 +1,28 @@
+{
+    "language": "Solidity",
+    "sources": {
+        "Simple.sol": {
+            "content": "//SPDX-License-Identifier: MIT\npragma solidity ^0.8.0;\n\ncontract Simple {\n    constructor() {}\n\n    string public foo;\n\n    function setFoo() external {\n        foo = \"bar\";\n    }\n}"
+        }
+    },
+    "settings": {
+        "optimizer": {
+            "enabled": true,
+            "runs": 200
+        },
+        "evmVersion": "paris",
+        "metadata": {
+            "useLiteralContent": true
+        },
+        "libraries": {
+            
+        },
+        "outputSelection": {
+            "*": {
+                "*": [
+                    "*"
+                ]
+            }
+        }
+    }
+}
