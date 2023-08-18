@@ -26,3 +26,7 @@ brew install solidity.rb
 solc -o. --bin --ast-compact-json --asm Simple.sol
 
 solc --pretty-json  -o. --bin --ast-compact-json --asm Simple.sol
+
+solc  --standard-json ./input.json --combined-json metadata  > metadata.json
+solc --metadata --metadata-literal Simple.sol > metadata.json
+
