@@ -1,3 +1,4 @@
 *.evm
 *.bin
 *.ast
+output.json

@@ -1,32 +1,36 @@
 # solc
 
 ## 安装
-### MAC 安装 solc
-https://docs.soliditylang.org/en/v0.8.17/installing-solidity.html
+不同环境份安装教程：https://docs.soliditylang.org/en/latest/installing-solidity.html
+
+MAC 安装 solc 教程（通过Homebrew安装）：
+```
 brew update
 brew upgrade
 brew tap ethereum/ethereum
 brew install solidity
+```
 
-### 切换版本
-在Github上查看solidity.rb的提交，复制您想要的版本的提交哈希并在您的机器上检出。
-https://github.com/ethereum/homebrew-ethereum/commits/master/solidity.rb
+## 使用
+### 查看版本号
+`solc --version` 或者 `solc -V`
 
-git clone https://github.com/ethereum/homebrew-ethereum.git
-cd homebrew-ethereum
-git checkout <your-hash-goes-here>
+运行`solc --help`，查看更多参数选项
 
-brew unlink solidity
 
-### eg. Install 0.4.8
+### 编译合约
+运行以下命令，打印出二进制代码
+`solc --bin xxx.sol` 
 
-brew install solidity.rb
+### 标准输入和输出 JSON
+与 Solidity 编译器进行接口交互的推荐方式，尤其是对于更复杂和自动化的设置
 
-## 编译合约
-solc -o. --bin --ast-compact-json --asm Simple.sol
+常见参数见： [input.json](./input.json)
 
-solc --pretty-json  -o. --bin --ast-compact-json --asm Simple.sol
+完整版参数见：https://docs.soliditylang.org/en/v0.8.21/using-the-compiler.html#compiler-input-and-output-json-description
 
-solc  --standard-json ./input.json --combined-json metadata  > metadata.json
-solc --metadata --metadata-literal Simple.sol > metadata.json
+通过标准输入编译合约，生成标准输出
+```
+solc  --standard-json ./input.json > output.json
+```
 
