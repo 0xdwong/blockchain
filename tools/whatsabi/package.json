@@ -1,0 +1,11 @@
+{
+  "name": "whatsabi",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "type" : "module",
+  "dependencies": {
+    "@shazow/whatsabi": "^0.7.0",
+    "ethers": "^6.7.1"
+  }
+}
