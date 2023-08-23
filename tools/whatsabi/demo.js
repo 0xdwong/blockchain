@@ -1,7 +1,8 @@
 import { ethers } from "ethers";
 import { whatsabi } from "@shazow/whatsabi";
 
-const address = "0x00000000006c3852cbEf3e08E8dF289169EdE581"; // Or your fav contract address
+// Or your fav contract address
+const address = "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48"; // USDC
 
 
 let result = await whatsabi.autoload(address, {
@@ -16,7 +17,7 @@ let result = await whatsabi.autoload(address, {
   // onError: (phase: string, context: any) => { ... }
 
   // * Optional settings:
-  // followProxies: false,
+  followProxies: true,
   // enableExperimentalMetadata: false,
 });
 

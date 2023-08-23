@@ -6,6 +6,6 @@
   "type" : "module",
   "dependencies": {
     "@shazow/whatsabi": "^0.7.0",
-    "ethers": "^6.7.1"
+    "ethers": "^5.7.2"
   }
 }
