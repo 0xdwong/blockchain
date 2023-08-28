@@ -11,4 +11,4 @@
 - [solc](./solidity/solc/README.md)
 
 ### 工具
-- [whatsabi](./tools/whatsabi/README.md)
+- [whatsabi](./whatsabi/README.md)
