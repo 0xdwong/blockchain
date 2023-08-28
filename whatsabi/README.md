@@ -1,5 +1,5 @@
 # WhatsABI
-从 EVM 字节码中猜测出 ABI（和其他元数据），即使没有原始源代码。[Github](https://github.com/shazow/whatsabi)
+从 EVM 字节码中猜测出 ABI（和其他元数据），即使没有源代码。[Github](https://github.com/shazow/whatsabi)
 
 ## 特点
 WhatsABI 在一些重要方面与其他 EVM 分析工具不同：
@@ -9,7 +9,7 @@ WhatsABI 在一些重要方面与其他 EVM 分析工具不同：
 - 不假设源语言，因此可以适用于除 Solidity（Vyper，甚至手写汇编）之外的源语言
 - 开放源代码（MIT 许可证），以便任何人都可以使用它
 
-## 做什么
+## 可以做什么
 - 从字节码返回选择器
 - 从选择器中查找函数签名
 - 解决代理合同
