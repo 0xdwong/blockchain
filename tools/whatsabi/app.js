@@ -27,7 +27,7 @@ console.log(await signatureLookup.loadFunctions("0x46423aa7"));
 // // -> ["getOrderStatus(bytes32)"]);
 
 // // We also have event loaders!
-console.log(await signatureLookup.loadEvents("0x721c20121297512b72821b97f5326877ea8ecf4bb9948fea5bfcb6453074d37f");
+console.log(await signatureLookup.loadEvents("0x721c20121297512b72821b97f5326877ea8ecf4bb9948fea5bfcb6453074d37f"));
 // // -> ["CounterIncremented(uint256,address)"]
 
 // // There are more fancy loaders in whatsabi.loaders.*, take a look!

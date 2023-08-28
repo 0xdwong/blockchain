@@ -21,4 +21,4 @@ let result = await whatsabi.autoload(address, {
   // enableExperimentalMetadata: false,
 });
 
-console.log(result);
+console.log('====result====\n', result);
