@@ -1,5 +1,5 @@
 # sol2uml
-sol2uml 是一款用于 Solidity 智能合约可视化和存储布局的工具。支持从命令行界面生成存储图和统一建模语言（UML）等。
+sol2uml 是一款用于 Solidity 智能合约可视化的工具。支持从命令行界面生成合约存储图和合约类图（UML）等。
 
 ## 主要功能
 - 生成智能合约类图（UML）
@@ -12,7 +12,7 @@ sol2uml 是一款用于 Solidity 智能合约可视化和存储布局的工具�
 安装： `npm install -g sol2uml`  
 运行命令：`sol2uml [command] <options>`
 
-Commands 选项:
+command 选项:
 | 命令 | 备注 |
 | :------ | :------ |
 | class   | 生成 UML 类图 |
@@ -26,7 +26,7 @@ options 选项：
  | :------ | :------ |
  | -f, --outputFormat <value>                     | 输出文件格式（"svg"(默认), "png", "dot", "all"）|
  | -o, --outputFileName <value>                   | 输出文件名|
- | -i, --ignoreFilesOrFolders <filesOrFolders>    | comma-separated list of files or folders to ignore|
+ | -i, --ignoreFilesOrFolders <filesOrFolders>    | 忽略文件，","隔开|
  | -n, --network <network>                        | 区块链网络（"mainnet"(默认), "goerli", "sepolia", "polygon", "arbitrum", "bsc", "optimism", "gnosis", "base"等）
  | -k, --apiKey <key>                             | 区块链浏览器的KEY |
  | -bc, --backColor <color>                       | Canvas 背景颜色 (默认白色；"none" 则是透明)|
