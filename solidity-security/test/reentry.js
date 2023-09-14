@@ -20,7 +20,7 @@ async function init() {
     await attackerContrac.deployed();
 }
 
-describe.only('attack', () => {
+describe('attack', () => {
 
     before(async () => {
         await init();

@@ -18,7 +18,7 @@ async function init() {
     myERC721 = await MyERC721.deploy();
 }
 
-describe.only("EventPOAPMinter", () => {
+describe("EventPOAPMinter", () => {
     beforeEach(async () => {
         await init();
     })
