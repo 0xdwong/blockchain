@@ -18,7 +18,7 @@ describe('ModifySample', () => {
         await init();
     });
 
-    it.only('multiModifier', async () => {
+    it('multiModifier', async () => {
         await contractInstance.multiModifier();
         let a = await contractInstance.getA();
         expect(a).to.be.equal(11);

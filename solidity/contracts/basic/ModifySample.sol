@@ -1,13 +1,13 @@
 //SPDX-License-Identifier: MIT
 pragma solidity ^0.8.0;
 
-import "hardhat/console.sol";
+// import "hardhat/console.sol";
 
 contract ModifySample {
     uint a = 10;
 
     modifier mf1(uint b) {
-        console.log("====mf1====");
+        // console.log("====mf1====");
         uint c = b;
         _;
         c = a;
@@ -15,14 +15,14 @@ contract ModifySample {
     }
 
     modifier mf2() {
-        console.log("====mf2====");
+        // console.log("====mf2====");
         uint c = a;
         _;
         setA(100);
     }
 
     modifier mf3() {
-        console.log("====mf3====");
+        // console.log("====mf3====");
         setA(12);
         return;
         _;
@@ -30,7 +30,7 @@ contract ModifySample {
     }
 
     function multiModifier() public mf1(a) mf2 mf3 {
-        console.log("====test1====");
+        // console.log("====test1====");
         setA(1);
     }
 
@@ -39,7 +39,7 @@ contract ModifySample {
     }
 
     function setA(uint num) public {
-        console.log("====setA====", num);
+        // console.log("====setA====", num);
         a = num;
     }
 }

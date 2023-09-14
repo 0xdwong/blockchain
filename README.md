@@ -8,7 +8,7 @@
 
 
 ## Solidity
-- [常见合约漏洞](./solidity-security/README.md)
+- [常见合约漏洞](./solidity/README.md#常见漏洞)
 - [solcjs](./solcjs/README.md)
 - [solc](./solc/README.md)
 

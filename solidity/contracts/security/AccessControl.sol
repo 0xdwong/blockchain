@@ -16,7 +16,7 @@ contract AccessControl{
         setOwner(msg.sender);  //set owner to deployer 
     }
 
-    function setOwner(address _owner) public{
+    function setOwner(address _owner) private{
         owner=_owner;
     }
 
