@@ -7,12 +7,16 @@ import dotenv from "dotenv"
 dotenv.config();
 
 
-async function init() {
-    const connection = new Connection(clusterApiUrl("devnet"));
+function getWallet(){
     const mnemonic = process.env.mnemonic;
     const seed = bip39.mnemonicToSeedSync(mnemonic, ""); // (mnemonic, password)
     const wallet = Keypair.fromSeed(seed.slice(0, 32));
+    return wallet;
+}
 
+async function init() {
+    const connection = new Connection(clusterApiUrl("devnet"));
+    const wallet = getWallet();
     const publicKey = wallet.publicKey;
     console.log('publicKey', publicKey.toString());
 
@@ -29,6 +33,28 @@ async function init() {
     return metaplex;
 }
 
+async function createCollection() {
+    const metaplex = await init();
+    const wallet = getWallet();
+
+    const { nft } = await metaplex.nfts().create({
+        // uri: "https://arweave.net/fabEf9VKPJumMc1nI9S6ZwZTQZGgpUxXf7WLSaW9enQ",
+        // uri: "https://arweave.net/yVg2882j8IofTKgqemYZ62Cy5-NGK_1z7FRd_kxifJU",
+        uri: "https://ipfs.decert.me/QmRJzzEUQk4yxf6tTN5yHtXAGVpn2vufC8SJ3ouncK53xT",
+        name: "MYCollection",
+        symbol: "MYC",
+        sellerFeeBasisPoints: 0, // Represents 5.00%.
+        // mintTokens: false,
+        isCollection: true,
+        collection: wallet.publicKey,
+        // collectionAuthority: wallet,
+    },
+        { commitment: "finalized" }
+    );
+
+    console.log('====nft====', nft.mint.address.toBase58());
+    return nft.mint.address.toBase58();
+}
 
 async function create() {
     const metaplex = await init();
@@ -171,7 +197,8 @@ async function findByMint() {
 }
 
 async function main() {
-    await init();
+    // await init();
+    await createCollection();
     // await create();
     // await mint();
     // await findByMint();

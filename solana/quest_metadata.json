@@ -1,0 +1,18 @@
+{
+    "name": "区块链技术通识挑战",
+    "symbol": "Decert",
+    "description": "本挑战用来测试你对比特币与区块链技术知识的了解，内容涉及到对工作量证明、钱包、浏览器、交易等知识的理解。",
+    "image": "https://ipfs.decert.me/QmbDwpj6vQabytN6trX6pcAC948BH2hbJ2e7e1cdn4pJvk",
+    "attributes": [
+        {
+            "trait_type": "token_id",
+            "value": 10000
+        },
+        {
+            "trait_type": "title",
+            "value": "区块链技术通识挑战"
+        }
+    ],
+    "external_url": "https://decert.me/quests/10000",
+    "version": 1.1
+}
