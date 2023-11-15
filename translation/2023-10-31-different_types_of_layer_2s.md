@@ -1,5 +1,5 @@
 # 不同类型的 layer 2
-> 原文链接链接：[https://vitalik.ca/general/2023/10/31/l2types.html](https://vitalik.ca/general/2023/10/31/l2types.html)
+> 原文链接：[https://vitalik.ca/general/2023/10/31/l2types.html](https://vitalik.ca/general/2023/10/31/l2types.html)
 
 _特别感谢 Karl Floersch 的反馈和审阅_
 
