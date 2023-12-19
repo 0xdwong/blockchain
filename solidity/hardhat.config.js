@@ -1,5 +1,4 @@
-require("@nomiclabs/hardhat-waffle");
-require("@nomicfoundation/hardhat-verify");
+require("@nomicfoundation/hardhat-toolbox");
 require("hardhat-gas-reporter");
 require('hardhat-abi-exporter');
 require('hardhat-docgen');
@@ -19,6 +18,9 @@ module.exports = {
             },
             {
                 version: "0.8.0",
+            },
+            {
+                version: "0.4.17",
             }
         ]
     },
@@ -103,6 +105,6 @@ module.exports = {
     docgen: {
         path: './docs',
         clear: true,
-        runOnCompile: true,
+        runOnCompile: false,
     }
 };
