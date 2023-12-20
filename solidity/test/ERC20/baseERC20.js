@@ -1,7 +1,7 @@
 const { expect } = require('chai');
 const { ethers } = require('hardhat');
 
-let contractInstance;
+let token;
 let accounts = [];
 let owner;
 const oneEther = ethers.parseUnits('1.0', "ether");
@@ -11,11 +11,11 @@ async function init() {
     accounts = await ethers.getSigners();
     owner = accounts[0];
 
-    contractInstance = await ethers.deployContract("BaseERC20");
-    // console.log('====contract address====', await contractInstance.getAddress());
+    token = await ethers.deployContract("BaseERC20");
+    // console.log('====contract address====', await token.getAddress());
 }
 
-describe('BaseERC20', () => {
+describe.only('BaseERC20', () => {
     before(async () => {
         await init();
     });
@@ -25,12 +25,14 @@ describe('BaseERC20', () => {
             const sender = accounts[1]; //not owner
 
             await expect(
-                contractInstance.connect(sender).mint(randomAddr, oneEther)
+                token.connect(sender).mint(randomAddr, oneEther)
             ).to.be.revertedWith("Ownable: caller is not the owner");
         });
 
         it('mint succeed', async () => {
-            contractInstance.connect(owner).mint(randomAddr, oneEther)
+            await expect(
+                () => token.connect(owner).mint(randomAddr, oneEther)
+            ).to.changeTokenBalances(token, [randomAddr], [oneEther]);
         });
     })
 });
