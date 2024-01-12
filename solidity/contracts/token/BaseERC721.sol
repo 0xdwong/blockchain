@@ -58,14 +58,14 @@ contract BaseERC721 {
         bool approved
     );
 
+    /**
+     * @dev Initializes the contract by setting a `name`, a `symbol` and a `baseURI` to the token collection.
+     */
     constructor(
         string memory name_,
         string memory symbol_,
         string memory baseURI_
     ) {
-        // Initializes the contract by setting a `name`, a `symbol` and a `baseURI`
-
-        // Write your code here
         _name = name_;
         _symbol = symbol_;
         _baseURI = baseURI_;
@@ -75,7 +75,6 @@ contract BaseERC721 {
      * @dev See {IERC721Metadata-name}.
      */
     function name() public view returns (string memory) {
-        // Write your code here
         return _name;
     }
 
@@ -83,7 +82,6 @@ contract BaseERC721 {
      * @dev See {IERC721Metadata-symbol}.
      */
     function symbol() public view returns (string memory) {
-        // Write your code here
         return _symbol;
     }
 
@@ -91,7 +89,6 @@ contract BaseERC721 {
      * @dev See {IERC721Metadata-tokenURI}.
      */
     function tokenURI(uint256 tokenId) public view returns (string memory) {
-        // Write your code here
         require(
             _exists(tokenId),
             "ERC721Metadata: URI query for nonexistent token"
@@ -101,15 +98,45 @@ contract BaseERC721 {
         return string(abi.encodePacked(baseURI, tokenId.toString()));
     }
 
+    /**
+     * @dev Mints `tokenId` and transfers it to `to`.
+     *
+     *
+     * Requirements:
+     *
+     * - `to` cannot be the zero address.
+     * - `tokenId` must not exist.
+     *
+     * Emits a {Transfer} event.
+     */
+    function mint(address to, uint256 tokenId) public {
+        require(to != address(0), "ERC721: mint to the zero address");
+        require(!_exists(tokenId), "ERC721: token already minted");
+
+        _balances[to] += 1;
+        _owners[tokenId] = to;
+
+        emit Transfer(address(0), to, tokenId);
+    }
+
+    /**
+     * @dev See {IERC721-balanceOf}.
+     */
     function balanceOf(address owner) public view returns (uint256) {
         return _balances[owner];
     }
 
+    /**
+     * @dev See {IERC721-ownerOf}.
+     */
     function ownerOf(uint256 tokenId) public view returns (address) {
         address owner = _owners[tokenId];
         return owner;
     }
 
+    /**
+     * @dev See {IERC721-approve}.
+     */
     function approve(address to, uint256 tokenId) public {
         address owner = ownerOf(tokenId);
         require(to != owner, "ERC721: approval to current owner");
@@ -125,6 +152,9 @@ contract BaseERC721 {
         emit Approval(owner, to, tokenId);
     }
 
+    /**
+     * @dev See {IERC721-getApproved}.
+     */
     function getApproved(uint256 tokenId) public view returns (address) {
         require(
             _exists(tokenId),
@@ -134,6 +164,9 @@ contract BaseERC721 {
         return _tokenApprovals[tokenId];
     }
 
+    /**
+     * @dev See {IERC721-setApprovalForAll}.
+     */
     function setApprovalForAll(address operator, bool approved) public {
         address sender = msg.sender;
         require(sender != operator, "ERC721: approve to caller");
@@ -141,6 +174,9 @@ contract BaseERC721 {
         emit ApprovalForAll(sender, operator, approved);
     }
 
+    /**
+     * @dev See {IERC721-isApprovedForAll}.
+     */
     function isApprovedForAll(
         address owner,
         address operator
@@ -148,6 +184,9 @@ contract BaseERC721 {
         return _operatorApprovals[owner][operator];
     }
 
+    /**
+     * @dev See {IERC721-transferFrom}.
+     */
     function transferFrom(address from, address to, uint256 tokenId) public {
         require(
             _isApprovedOrOwner(msg.sender, tokenId),
@@ -157,6 +196,9 @@ contract BaseERC721 {
         _transfer(from, to, tokenId);
     }
 
+    /**
+     * @dev See {IERC721-safeTransferFrom}.
+     */
     function safeTransferFrom(
         address from,
         address to,
@@ -181,6 +223,24 @@ contract BaseERC721 {
         _safeTransfer(from, to, tokenId, _data);
     }
 
+    /**
+     * @dev Safely transfers `tokenId` token from `from` to `to`, checking first that contract recipients
+     * are aware of the ERC721 protocol to prevent tokens from being forever locked.
+     *
+     * `_data` is additional data, it has no specified format and it is sent in call to `to`.
+     *
+     * This internal function is equivalent to {safeTransferFrom}, and can be used to e.g.
+     * implement alternative mechanisms to perform token transfer, such as signature-based.
+     *
+     * Requirements:
+     *
+     * - `from` cannot be the zero address.
+     * - `to` cannot be the zero address.
+     * - `tokenId` token must exist and be owned by `from`.
+     * - If `to` refers to a smart contract, it must implement {IERC721Receiver-onERC721Received}, which is called upon a safe transfer.
+     *
+     * Emits a {Transfer} event.
+     */
     function _safeTransfer(
         address from,
         address to,
@@ -228,27 +288,6 @@ contract BaseERC721 {
     }
 
     /**
-     * @dev Mints `tokenId` and transfers it to `to`.
-     *
-     *
-     * Requirements:
-     *
-     * - `tokenId` must not exist.
-     * - `to` cannot be the zero address.
-     *
-     * Emits a {Transfer} event.
-     */
-    function mint(address to, uint256 tokenId) public {
-        require(to != address(0), "ERC721: mint to the zero address");
-        require(!_exists(tokenId), "ERC721: token already minted");
-
-        _balances[to] += 1;
-        _owners[tokenId] = to;
-
-        emit Transfer(address(0), to, tokenId);
-    }
-
-    /**
      * @dev Transfers `tokenId` from `from` to `to`.
      *  As opposed to {transferFrom}, this imposes no restrictions on msg.sender.
      *
@@ -286,6 +325,16 @@ contract BaseERC721 {
         emit Approval(ownerOf(tokenId), to, tokenId);
     }
 
+    /**
+     * @dev Internal function to invoke {IERC721Receiver-onERC721Received} on a target address.
+     * The call is not executed if the target address is not a contract.
+     *
+     * @param from address representing the previous owner of the given token ID
+     * @param to target address that will receive the tokens
+     * @param tokenId uint256 ID of the token to be transferred
+     * @param _data bytes optional data to send along with the call
+     * @return bool whether the call correctly returned the expected magic value
+     */
     function _checkOnERC721Received(
         address from,
         address to,
@@ -319,10 +368,8 @@ contract BaseERC721 {
     }
 }
 
-contract BaseERC721Receiver is BaseERC721, IERC721Receiver {
-    constructor() BaseERC721("BaseERC721Receiver", "BERC721R", "") {
-        
-    }
+contract BaseERC721Receiver is IERC721Receiver {
+    constructor() {}
 
     function onERC721Received(
         address,

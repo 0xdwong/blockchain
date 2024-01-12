@@ -35,7 +35,6 @@ describe("BaseERC721", async () => {
         await init();
     })
 
-
     describe("IERC721Metadata", async () => {
         it("name", async () => {
             expect(await contract.name()).to.equal(name);
@@ -295,6 +294,25 @@ describe("BaseERC721", async () => {
                 await expect(
                     contract.connect(owner).transferFrom(from, to, tokenId)
                 ).to.revertedWith("ERC721: transfer from incorrect owner");
+            });
+
+            it('should revoke old approval when token transfered', async function () {
+                // mint token first
+                const tokenId = 1;
+                await contract.connect(owner).mint(owner.address, tokenId); // mint to self
+
+                const to = randomAddr;
+
+                // approve
+                const spender = accounts[1].address;
+                await contract.connect(owner).approve(spender, tokenId);
+                expect(await contract.getApproved(tokenId)).to.equal(spender); //before
+
+                // transfer
+                await contract.connect(owner).transferFrom(owner.address, to, tokenId);
+
+                // should revoke approval
+                expect(await contract.getApproved(tokenId)).to.equal(ZeroAddress); // after
             });
         });
 
