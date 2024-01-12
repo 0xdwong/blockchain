@@ -1,0 +1,30 @@
+{
+    "@context": [
+        "https://www.w3.org/2018/credentials/v1"
+    ],
+    "version": "2",
+    "ctype": "0x4f43871edb15581f9012ffec82734f109fee43c5bc764c68a67adcae42a68620",
+    "issuanceDate": 1705039996871,
+    "credentialSubject": {
+        "Name": "Alice",
+        "Role": "vip"
+    },
+    "issuer": [
+        "did:zk:0x85cBd29F98f04437348f6D9CBeAF6a2d7F05a717"
+    ],
+    "holder": "did:zk:0x117f339CCeea390Ca9a4e750A5dB5F67b48580fF",
+    "hasher": [
+        "Keccak256",
+        "Keccak256"
+    ],
+    "digest": "0xb5d70dfc72f45ca4b9cb7f1f251ec80968f8fb6c9d5dbbe10c65485f1bd7c7cb",
+    "proof": [
+        {
+            "type": "EcdsaSecp256k1SignatureEip191",
+            "created": 1705039996904,
+            "verificationMethod": "did:zk:0x85cBd29F98f04437348f6D9CBeAF6a2d7F05a717#key-0",
+            "proofPurpose": "assertionMethod",
+            "proofValue": "zEZYnGa3hvNmkh825bkYgrKJhCoJ7HMhD5VeqV3m88W2Z9yMpoKd9tYoCfeYxwax1RYsV9U4JDfbdHwvN8rg9kLzL"
+        }
+    ]
+}

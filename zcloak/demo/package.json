@@ -1,0 +1,31 @@
+{
+  "name": "zkid-sdk-demo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.ts",
+  "scripts": {
+    
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@zcloak/crypto": "^2.0.0",
+    "@zcloak/ctype": "^2.0.0",
+    "@zcloak/did": "^2.0.0",
+    "@zcloak/did-resolver": "^2.0.0",
+    "@zcloak/keyring": "^2.0.0",
+    "@zcloak/message": "^2.0.0",
+    "@zcloak/vc": "^2.0.0",
+    "@zcloak/verify": "^2.0.0",
+    "dotenv": "^16.0.3",
+    "qs": "^6.11.1",
+    "axios": "^1.5.1"
+  },
+  "devDependencies": {
+    "@types/node": "^18.15.5",
+    "@types/qs": "^6.9.7",
+    "ts-node": "^10.9.1",
+    "typescript": "^5.1.3"
+  }
+}

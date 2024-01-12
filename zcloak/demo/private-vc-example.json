@@ -1,0 +1,38 @@
+{
+    "@context": [
+        "https://www.w3.org/2018/credentials/v1"
+    ],
+    "version": "2",
+    "ctype": "0x4f43871edb15581f9012ffec82734f109fee43c5bc764c68a67adcae42a68620",
+    "issuanceDate": 1705040055363,
+    "credentialSubject": {
+        "Name": "Alice",
+        "Role": "vip"
+    },
+    "issuer": [
+        "did:zk:0x85cBd29F98f04437348f6D9CBeAF6a2d7F05a717"
+    ],
+    "holder": "did:zk:0x117f339CCeea390Ca9a4e750A5dB5F67b48580fF",
+    "hasher": [
+        "Keccak256",
+        "Keccak256"
+    ],
+    "digest": "0x5626c27bc5c7773204d02beb439970bfbe3b22e18a7d262f7e2f1c9724c0e138",
+    "proof": [
+        {
+            "type": "EcdsaSecp256k1SignatureEip191",
+            "created": 1705040055408,
+            "verificationMethod": "did:zk:0x85cBd29F98f04437348f6D9CBeAF6a2d7F05a717#key-0",
+            "proofPurpose": "assertionMethod",
+            "proofValue": "z4za85S4Xsfk3Z9UB9zjFGLLLk22BFSfTMigEm4bPy7iuz1J8csX3BeZNyKc3bK1tdepjnd5q1JDXJSUJuRugGCF12"
+        }
+    ],
+    "credentialSubjectHashes": [
+        "0xfc101a04237cc88e4bbd74ef8fc288e0134ae93c77895d2e9d5f5524c7cdb872",
+        "0x44e155dbf9dfb1a41780299ea9eff1d41910291027084e674cbedb811d604ce8"
+    ],
+    "credentialSubjectNonceMap": {
+        "0x81376b9868b292a46a1c486d344e427a3088657fda629b5f4a647822d329cd6a": "0x28dea10f0470e0914d1975c865f14b5155c8c47c63f668b62f4ed0f950e55227",
+        "0x97dcc66e7ef0eb03538719edede1fe51ddd18e4c57e975774730e2a28aca99db": "0xe319a1598c8537f13e98b745fbfb437cdab57f8af06f59b1ab67f49bed286bcc"
+    }
+}
