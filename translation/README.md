@@ -1,5 +1,8 @@
 # 翻译文章
 
+## 2024
+- [Try Catch 和 Solidity 可以回滚的所有方式](./zh/try-catch-and-all-the-ways-solidity-can-revert.md)
+
 ## 2023
 - [退出 EVM 有效性验证：Plasma 的回归（vitalik）](./2023-11-14-exit-games-for-EVM-validiums-the-return-of-Plasma.md)
 - [Solidity 0.8.23 发布公告](./2023-11-08-solidity-0.8.23-release-announcement.md)
