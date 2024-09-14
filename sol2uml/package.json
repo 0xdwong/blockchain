@@ -1,0 +1,9 @@
+{
+  "name": "sol2uml",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "sol2uml": "^2.5.20"
+  }
+}

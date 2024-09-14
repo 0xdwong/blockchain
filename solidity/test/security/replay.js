@@ -4,7 +4,7 @@ const { ethers } = require('hardhat');
 let contrac;
 let accounts = [];
 let owner, account1;
-const ONE_ETH = ethers.utils.parseUnits('1.0', "ether");
+const ONE_ETH = ethers.parseUnits('1.0', "ether");
 
 async function init() {
     accounts = await ethers.getSigners();

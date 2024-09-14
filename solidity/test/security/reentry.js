@@ -1,10 +1,10 @@
 const { expect } = require('chai');
-const { ethers } = require('hardhat');
+const ethers = require('ethers');
 
 let vulnerableContrac, attackerContrac;
 let accounts = [];
 let owner, account1;
-const ONE_ETH = ethers.utils.parseUnits('1.0', "ether");
+const ONE_ETH = ethers.parseUnits('1.0', "ether");
 
 async function init() {
     accounts = await ethers.getSigners();
@@ -35,7 +35,7 @@ describe('attack', () => {
                 attackerContrac.connect(account1).attack({ value: ONE_ETH })
             ).to.be.revertedWith("Transfer failed");
         });
-        
+
         it.skip('reentry-succeed', async () => {
             // deposit 1 ETH to vulnerableContrac
             await vulnerableContrac.connect(owner).deposit({ value: ONE_ETH.mul(1) });

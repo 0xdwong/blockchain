@@ -8,7 +8,7 @@ async function main() {
 
     // 部署合约
     let params = [];
-    const instance = await contract.deploy();
+    const instance = await contract.deploy(...params);
     await instance.deployed();
 
     console.log(`\ndeployer:`, owner.address);

@@ -1,0 +1,9 @@
+{
+  "name": "tx2uml",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "tx2uml": "^1.1.28"
+  }
+}
