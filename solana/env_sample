@@ -1,8 +1,0 @@
-# 助记词
-mnemonic= ""
-
-# 私钥
-privateKey = ""
-
-# Solana 网络，devnet(默认) ｜ mainnet-beta
-# Solana_Cluster = "devnet"

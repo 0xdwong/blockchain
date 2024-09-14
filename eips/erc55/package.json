@@ -1,9 +1,0 @@
-{
-  "name": "erc55",
-  "version": "1.0.0",
-  "main": "index.js",
-  "license": "MIT",
-  "dependencies": {
-    "keccak": "^3.0.3"
-  }
-}
