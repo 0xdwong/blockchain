@@ -1,19 +1,17 @@
 # Share something about blockchain 
 
 ## 目录
-## EIPS
-- [ERC-55（地址校验）](./eips/erc55/README.md)
-- [ERC-6551（非同质化代币绑定账户提案）](./eips/erc6551/README.md)
-- [ERC-1167](./eips/erc1167/README.md)
-
 
 ## Solidity
-- [常见合约漏洞](./solidity/README.md#常见漏洞)
-- [solcjs](./solcjs/README.md)
-- [solc](./solc/README.md)
+- [Solidity](./src/solidity/README.md)
+- [solcjs](./src/solcjs/README.md)
+- [solc](./src/solc/README.md)
+
+## 钱包
+- [Safe 多签钱包](./src/gnosis_safe/README.md)
 
 ## 工具
-- [whatsabi](./whatsabi/README.md)
-- [sol2uml](./sol2uml/README.md)
+- [whatsabi](./src/whatsabi/README.md)
+- [sol2uml](./src/sol2uml/README.md)
 
-## [翻译文章](./translation/README.md)
+## [翻译文章](./src/translation/README.md)
